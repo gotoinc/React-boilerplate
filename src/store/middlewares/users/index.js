@@ -1,0 +1,1 @@
+export { watchUsers } from './fetchUsers';
