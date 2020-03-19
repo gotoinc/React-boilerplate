@@ -1,26 +1,17 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { increment, decrement, fetchUsersStart } from '../../store/actions';
+import React, { useMemo } from 'react';
+import { useUsers } from '../../hooks';
 
-const Dashboard = props => {
+const Dashboard = () => {
+  const params = useMemo(() => ({ results: 10 }), []);
+  const users = useUsers(params);
   return (
     <div>
-      count {props.count}
-      <button onClick={props.increment}>Increment</button>
-      <button onClick={props.decrement}>Decrement</button>
-      <button onClick={() => props.fetchUsersStart({ results: 10 })}>Fetch</button>
+      Dashboard
+      {users.map(user => (
+        <div key={user.login.uuid}>{user.email}</div>
+      ))}
     </div>
   );
 };
 
-export default connect(
-  state => ({
-    count: state.counter.count,
-    usersList: state.users.usersList,
-  }),
-  {
-    increment,
-    decrement,
-    fetchUsersStart,
-  }
-)(Dashboard);
+export default Dashboard;
