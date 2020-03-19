@@ -1,2 +1,1 @@
-export { default as counter } from './counter';
-export { default as users } from './users';
+export { default as users } from './usersReducer';

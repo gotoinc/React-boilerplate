@@ -14,7 +14,7 @@ ReactDOM.render(
   <>
     <Provider store={store}>
       <Router history={RedirectRouter.history}>
-        <Route path="/:locale(en|ru)?" component={App} />
+        <Route path="/:locale?" component={App} />
       </Router>
     </Provider>
   </>,
