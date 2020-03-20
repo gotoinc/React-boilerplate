@@ -3,11 +3,12 @@ import { Redirect } from 'react-router-dom';
 import { RoutesList, Navigator } from '..';
 import { useMatch } from '../../hooks';
 
-import { Page404, SignIn } from '../../pages';
-import { Layout404, PublicLayout } from '../../layouts';
+import { Page404, SignIn, Dashboard } from '../../pages';
+import { Layout404, PublicLayout, PrivateLayout } from '../../layouts';
 
 const RouterConfig = () => {
   const match = useMatch();
+  console.log('RouterConfig match',match)
   return {
     routes: [
       {
@@ -17,21 +18,14 @@ const RouterConfig = () => {
         children: <SignIn />,
         status: 'public',
       },
-      // {
-      //   path: `${match.path}${RoutesList.chat}`,
-      //   exact: true,
-      //   component: PublicLayout,
-      //   children: <Chat />,
-      //   status: 'public',
-      // },
-      // {
-      //   path: `${match.path}${RoutesList.main}`,
-      //   exact: true,
-      //   component: DashboardLayout,
-      //   children: <Main />,
-      //   allowedRoles: ['member'],
-      //   status: 'private',
-      // },
+      {
+        path: `${match.path}${RoutesList.dashboard}`,
+        exact: true,
+        component: PrivateLayout,
+        children: <Dashboard />,
+        allowedRoles: ['member'],
+        status: 'private',
+      },
       {
         path: `${match.path}${RoutesList.page404}`,
         exact: true,

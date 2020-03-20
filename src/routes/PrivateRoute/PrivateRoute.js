@@ -28,7 +28,7 @@ PrivateRoute.propTypes = {
   children: PropTypes.element.isRequired,
   path: PropTypes.string.isRequired,
   routes: PropTypes.arrayOf(PropTypes.shape({})),
-  component: PropTypes.element.isRequired,
+  component: PropTypes.func.isRequired,
 };
 
 PrivateRoute.defaultProps = {

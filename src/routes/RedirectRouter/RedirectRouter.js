@@ -14,10 +14,12 @@ class RedirectRouter {
     this.history.push(RoutesList.login);
   }
 
-  goToMain() {
-    this.history.push(RoutesList.main);
+  goToDashboard(locale) {
+    this.history.push(`${locale}/dashboard`);
   }
-
+  getDashboardPath(locale) {
+    return `${locale}/dashboard`
+  }
   goToPage404() {
     this.history.push(RoutesList.page404);
   }
