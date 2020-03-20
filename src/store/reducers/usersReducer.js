@@ -5,6 +5,8 @@ const initialState = {
   users: [],
   error: '',
   loading: false,
+  role: 'member',
+  locale: 'ru',
 };
 
 const usersReducer = handleActions(

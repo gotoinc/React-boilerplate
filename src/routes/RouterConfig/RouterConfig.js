@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import { RoutesList, Navigator } from '..';
+import { RoutesList, Navigator, RedirectRouter } from '../index';
 import { useMatch } from '../../hooks';
 
 import { Page404, SignIn, Dashboard } from '../../pages';
@@ -8,7 +8,6 @@ import { Layout404, PublicLayout, PrivateLayout } from '../../layouts';
 
 const RouterConfig = () => {
   const match = useMatch();
-  console.log('RouterConfig match',match)
   return {
     routes: [
       {
@@ -40,7 +39,7 @@ const RouterConfig = () => {
         status: 'default',
       },
     ],
-    noRouteFound: <Redirect from="*" to={`${match.path}${RoutesList.page404}`} />,
+    noRouteFound: <Redirect from="*" to={RedirectRouter.getPage404Path(match.params.locale)} />,
   };
 };
 

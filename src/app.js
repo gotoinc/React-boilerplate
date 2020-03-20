@@ -1,21 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { RouterConfig, RoutesWithSubRoutes } from './routes';
-import localStorage from './utils/localStorage';
-import { RedirectRouter } from './routes';
+import { RouterConfig, RoutesWithSubRoutes, RedirectRouter } from './routes';
 
-const App = (props) => {
-  const [count, setCount] = useState(0)
-  useEffect(() => {
-  }, []);
+const App = () => {
   const { routes, noRouteFound } = RouterConfig();
-  const handleChangeLocale = (locale) => {
-      localStorage.setItem('locale', locale);
-       RedirectRouter.history.replace(`/${locale}/dashboard`)
-  }
   return (
     <div id="body">
+      <button onClick={() => RedirectRouter.history.push('/en/dashboard')}>to dashboard</button>
       <Switch>
         {routes.map(route => {
           return <RoutesWithSubRoutes key={route.path} {...route} />;

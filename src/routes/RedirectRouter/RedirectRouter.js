@@ -1,31 +1,56 @@
 import { createBrowserHistory } from 'history';
-import RoutesList from '../RoutesList';
+import { browserLocale, localStorage } from '../../utils';
+import { availableLocalizations, defaultLocale } from '../../utils/constants';
 
 class RedirectRouter {
   constructor() {
     this.history = createBrowserHistory();
   }
 
-  goToSplash = () => {
-    this.history.push(RoutesList.splash);
+  getLocale = () => {
+    const pathnamesList = this.history.location.pathname.split('/');
+    const currentLocale = availableLocalizations.filter(locale => pathnamesList.includes(locale));
+    if (currentLocale.length) {
+      return '';
+    }
+    const localStorageLocale = localStorage.getItem('locale');
+    const isUserLocaleCorrect = availableLocalizations.includes(localStorageLocale);
+
+    if (isUserLocaleCorrect) {
+      return localStorageLocale;
+    }
+    if (browserLocale) {
+      return browserLocale;
+    }
+    return defaultLocale;
   };
 
-  goToLogin() {
-    this.history.push(RoutesList.login);
+  getLoginPath() {
+    return `${this.getLocale()}/sign-in`;
   }
 
-  goToDashboard(locale) {
-    this.history.push(`${locale}/dashboard`);
-  }
-  getDashboardPath(locale) {
-    return `${locale}/dashboard`
-  }
-  goToPage404() {
-    this.history.push(RoutesList.page404);
+  goToDashboard() {
+    this.history.push(`${this.getLocale()}/dashboard`);
   }
 
-  gotToSomeRouteWithParams({ campaignId, assessmentId }) {
-    this.history.push(`/main/campaign/${campaignId}/assessment/${assessmentId}`);
+  getDashboardPath() {
+    return `${this.getLocale()}/dashboard`;
+  }
+
+  getPage404Path(locale) {
+    if (availableLocalizations.includes(locale)) {
+      return `/${locale}/404`;
+    }
+    const localStorageLocale = localStorage.getItem('locale');
+    const isUserLocaleCorrect = availableLocalizations.includes(localStorageLocale);
+
+    if (isUserLocaleCorrect) {
+      return `/${localStorageLocale}/404`;
+    }
+    if (browserLocale) {
+      return `/${browserLocale}/404`;
+    }
+    return `/${defaultLocale}/404`;
   }
 
   getCurrentPath = () => {
