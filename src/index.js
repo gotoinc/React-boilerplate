@@ -7,7 +7,6 @@ import { RedirectRouter } from './routes';
 import configureStore from './store/store';
 import './assets/styles/index.css';
 import App from './app';
-import { createLocalizationSchema } from './utils';
 
 const store = configureStore();
 
