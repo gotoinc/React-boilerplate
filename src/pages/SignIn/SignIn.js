@@ -6,6 +6,7 @@ const SignIn = () => {
   return (
     <div>
       <button
+        type="button"
         onClick={() => {
           localStorage.setItem('authToken', 'token');
           localStorage.setItem('role', 'member');

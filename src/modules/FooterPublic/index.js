@@ -1,1 +1,1 @@
-export { default } from './FooterPublic'
+export { default } from './FooterPublic';

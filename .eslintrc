@@ -1,12 +1,6 @@
 {
-  "extends": [
-    "airbnb",
-    "plugin:prettier/recommended",
-    "prettier/react"
-  ],
-  "plugins": [
-    "react"
-  ],
+  "extends": ["airbnb", "plugin:prettier/recommended", "prettier/react"],
+  "plugins": ["react"],
   "globals": {
     "$": true,
     "jQuery": true,
@@ -27,10 +21,13 @@
     "no-console": 1,
     "import/extensions": "off",
     "import/no-unresolved": "off",
-    "jsx-a11y/anchor-is-valid": [ "error", {
-      "components": [ "Link" ],
-      "specialLink": [ "to" ]
-    }]
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to"]
+      }
+    ]
   },
   "env": {
     "es6": true,
