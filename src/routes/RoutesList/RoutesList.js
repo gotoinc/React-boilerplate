@@ -5,7 +5,7 @@ const routes = {
   dashboard: '/dashboard',
   signIn: '/sign-in',
   page404: '/404',
-  admin: '/admin',
+  profile: '/profile',
 };
 
 const RoutesList = {
@@ -13,7 +13,7 @@ const RoutesList = {
   dashboard: `${createLocalizationSchema()}${routes.dashboard}`,
   signIn: `${createLocalizationSchema()}${routes.signIn}`,
   page404: `${createLocalizationSchema()}${routes.page404}`,
-  admin: `${createLocalizationSchema()}${routes.admin}`,
+  profile: `${createLocalizationSchema()}${routes.profile}`,
   // someRouteWithParams = '/main/campaign/:campaignId/assessment/:assessmentId',
 };
 export default RoutesList;

@@ -25,19 +25,27 @@ class RedirectRouter {
     return defaultLocale;
   };
 
+  goToSignInPage = () => {
+    this.history.push(`${this.getLocale()}sign-in`);
+  };
+
   getLoginPath() {
     return `${this.getLocale()}/sign-in`;
   }
 
-  goToDashboard() {
-    this.history.push(`${this.getLocale()}/dashboard`);
-  }
+  goToDashboard = () => {
+    this.history.push(`${this.getLocale()}dashboard`);
+  };
 
   getDashboardPath() {
     return `${this.getLocale()}/dashboard`;
   }
 
-  getPage404Path(locale) {
+  goToProfile = () => {
+    this.history.push(`${this.getLocale()}profile`);
+  };
+
+  getPage404Path = locale => {
     if (availableLocalizations.includes(locale)) {
       return `/${locale}/404`;
     }
@@ -51,10 +59,15 @@ class RedirectRouter {
       return `/${browserLocale}/404`;
     }
     return `/${defaultLocale}/404`;
-  }
+  };
 
   getCurrentPath = () => {
     return this.history.location.pathname;
+  };
+
+  logOut = () => {
+    localStorage.clearStorage();
+    this.goToSignInPage();
   };
 }
 
