@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import { RedirectRouter } from './routes';
 import configureStore from './store/store';
-import './assets/styles/index.css';
+import './assets/styles/general.css';
 import App from './app';
 
 const store = configureStore();

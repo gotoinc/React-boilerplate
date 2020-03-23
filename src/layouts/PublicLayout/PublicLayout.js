@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { FooterPublic, HeaderPublic } from '../../modules';
+import styles from './PublicLayout.module.scss';
+import { HeaderPublic, FooterPublic } from '../../partials';
 
 const PublicLayout = ({ children, routes }) => {
   return (
-    <div className="flex flex-col justify-between h-screen bg-gray-100">
-      <div>
-        {/* <HeaderPublic /> */}
+    <div className={styles.container}>
+      <div className={styles.contentContainer}>
+        <HeaderPublic />
         {React.cloneElement(children, routes.length && routes)}
       </div>
-      {/* <FooterPublic /> */}
+      <FooterPublic />
     </div>
   );
 };

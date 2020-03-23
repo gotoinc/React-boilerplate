@@ -1,0 +1,18 @@
+@import "./src/assets/styles/variables";
+@import './src/assets/styles/settings';
+
+.container {
+  background: $color-primary-light;
+  display: flex;
+  align-items: center;
+  padding: 0 $rem2;
+  h2 {
+    color: white;
+    padding-top: $rem0\25;
+  }
+  img {
+    margin-right: $rem1;
+    height: $rem2;
+  }
+}
+
