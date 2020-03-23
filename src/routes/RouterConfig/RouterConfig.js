@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { RoutesList, Navigator, RedirectRouter } from '../index';
 import { useMatch } from '../../hooks';
 
-import { Page404, SignIn, Dashboard } from '../../pages';
+import { Page404, SignIn, Dashboard, Profile } from '../../pages';
 import { Layout404, PublicLayout, PrivateLayout } from '../../layouts';
 
 const RouterConfig = () => {
@@ -22,6 +22,14 @@ const RouterConfig = () => {
         exact: true,
         component: PrivateLayout,
         children: <Dashboard />,
+        allowedRoles: ['member'],
+        status: 'private',
+      },
+      {
+        path: `${match.path}${RoutesList.profile}`,
+        exact: true,
+        component: PrivateLayout,
+        children: <Profile />,
         allowedRoles: ['member'],
         status: 'private',
       },

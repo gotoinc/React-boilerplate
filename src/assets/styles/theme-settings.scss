@@ -1,0 +1,82 @@
+/* Theme colors */
+
+$color-blue-ribbon100: #EAEFFF;
+$color-blue-ribbon200: #CAD8FF;
+$color-blue-ribbon300: #A9C0FF;
+$color-blue-ribbon400: #6991FF;
+$color-blue-ribbon500: #2962FF;
+$color-blue-ribbon600: #2558E6;
+$color-blue-ribbon700: #193B99;
+$color-blue-ribbon800: #122C73;
+$color-blue-ribbon900: #0C1D4D;
+
+$color-picton-blue-100: #E9F9FE;
+$color-picton-blue-200: #C9F0FC;
+$color-picton-blue-300: #A9E7FB;
+$color-picton-blue-400: #68D6F7;
+$color-picton-blue-500: #27C4F4;
+$color-picton-blue-600: #23B0DC;
+$color-picton-blue-700: #177692;
+$color-picton-blue-800: #12586E;
+$color-picton-blue-900: #0C3B49;
+
+$color-flamingo100: #FDEEEB;
+$color-flamingo200: #FAD4CC;
+$color-flamingo300: #F7BBAE;
+$color-flamingo400: #F18771;
+$color-flamingo500: #EB5434;
+$color-flamingo600: #D44C2F;
+$color-flamingo700: #8D321F;
+$color-flamingo800: #6A2617;
+$color-flamingo900: #471910;
+
+$color-school-bus-yellow100: #FFFBE6;
+$color-school-bus-yellow200: #FEF6BF;
+$color-school-bus-yellow300: #FEF099;
+$color-school-bus-yellow400: #FDE54D;
+$color-school-bus-yellow500: #FCDA00;
+$color-school-bus-yellow600: #E3C400;
+$color-school-bus-yellow700: #978300;
+$color-school-bus-yellow800: #716200;
+$color-school-bus-yellow900: #4C4100;
+
+
+/* Them spacing */
+
+$px1: 1px;
+$px0: 0;
+$rem0\25: 0.25rem;
+$rem0\5: 0.5rem;
+$rem0\75: 0.75rem;
+$rem1: 1rem;
+$rem1\25: 1.25rem;
+$rem1\5: 1.5rem;
+$rem2: 2rem;
+$rem2\5: 2.5rem;
+$rem3: 3rem;
+$rem4: 4rem;
+$rem5: 5rem;
+$rem6: 6rem;
+$rem8: 8rem;
+$rem10: 10rem;
+$rem12: 12rem;
+$rem14: 14rem;
+$rem16: 16rem;
+
+
+/* Layouts */
+
+$screen-mobile-s: 325px;
+$screen-mobile-m: 375px;
+$screen-mobile-l: 425px;
+$screen-tablet: 768px;
+$screen-laptop: 1024px;
+
+
+
+// For export some variable you can use export
+
+//:export {
+//  colorPrimary: $color-flamingo600;
+//  colorSecondary: $color-school-bus-yellow700;
+//}
