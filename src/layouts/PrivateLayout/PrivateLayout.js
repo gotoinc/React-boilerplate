@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { HeaderPrivate, Sidebar } from '../../modules';
+import { HeaderPrivate, Sidebar, FooterPublic } from '../../modules';
+import styles from './PrivateLayout.module.scss';
 
 const PrivateLayout = ({ children, routes }) => {
   return (
     <Sidebar>
-      <div className="flex flex-col justify-between h-screen bg-gray-100">
-        <div>
+      <div className={styles.container}>
+        <div className={styles.contentContainer}>
           <HeaderPrivate />
           {React.cloneElement(children, routes.length && routes)}
         </div>
-        {/* <FooterPrivate /> */}
+        <FooterPublic />
       </div>
     </Sidebar>
   );
