@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './PublicLayout.module.scss';
-import { HeaderPublic, FooterPublic } from '../../partials';
+import { HeaderPublic, FooterPublic } from '../../modules';
 
 const PublicLayout = ({ children, routes }) => {
   return (

@@ -1,0 +1,46 @@
+@import '../../assets/styles/theme-settings';
+
+.img {
+  position: absolute;
+  top: 3.5rem;
+  left: $rem1\5;
+  cursor: pointer;
+  width: $rem2;
+}
+
+.sidebarList {
+  list-style: none;
+  padding: 20px;
+}
+
+.sidebarListItem {
+  font-size: $rem1\25;
+  margin-bottom: $rem1\25;
+  padding-left: $rem0\25;
+  color: $color-flamingo400;
+  border-bottom: 1px solid $color-flamingo400;
+  text-align: left;
+}
+.active {
+  color: $color-picton-blue-500;
+  border-bottom: 1px solid $color-picton-blue-400;
+}
+
+
+@media (min-width: $screen-mobile-m) {
+
+}
+
+@media (min-width: $screen-mobile-l) {
+
+}
+
+@media (min-width: $screen-tablet) {
+  .img {
+    top: $rem2\5;
+  }
+}
+
+@media (min-width: $screen-laptop) {
+
+}

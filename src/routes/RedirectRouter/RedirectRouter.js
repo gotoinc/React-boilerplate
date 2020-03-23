@@ -25,6 +25,10 @@ class RedirectRouter {
     return defaultLocale;
   };
 
+  goToSignInPage() {
+    this.history.push(`${this.getLocale()}/sign-in`);
+  }
+
   getLoginPath() {
     return `${this.getLocale()}/sign-in`;
   }
@@ -35,6 +39,10 @@ class RedirectRouter {
 
   getDashboardPath() {
     return `${this.getLocale()}/dashboard`;
+  }
+
+  goToProfile() {
+    this.history.push(`${this.getLocale()}/profile`)
   }
 
   getPage404Path(locale) {
