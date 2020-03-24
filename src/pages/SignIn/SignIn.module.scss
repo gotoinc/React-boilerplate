@@ -1,0 +1,36 @@
+@import "./src/assets/styles/theme-settings";
+
+.container {
+  margin-top: 20vh;
+  margin-bottom: $rem2;
+}
+
+.formContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: $rem3 0;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $rem1\25;
+  width: 200px;
+}
+
+.errorContainer {
+  margin-top: $rem0\5;
+  margin-bottom: $rem0\5;
+}
+
+.buttonContainer {
+  margin-top: $rem1;
+}
+
+@media (min-width: $screen-mobile-lm) {
+  .inputContainer {
+    width: 300px
+  }
+}

@@ -1,0 +1,63 @@
+@import './src/assets/styles/theme-settings';
+
+.container {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.container-s {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+@media (min-width: $screen-mobile-m) {
+  .container {
+    max-width: 365px;
+  }
+
+  .container-s {
+    max-width: 355px;
+  }
+}
+
+@media (min-width: $screen-mobile-l) {
+  .container {
+    max-width: 415px;
+  }
+  .container-s {
+    max-width: 405px;
+  }
+}
+
+@media (min-width: $screen-mobile-lm) {
+  .container {
+    max-width: 590px;
+  }
+  .container-s {
+    max-width: 580px;
+  }
+}
+
+@media (min-width: $screen-tablet) {
+  .container {
+    max-width: 758px;
+  }
+  .container-s {
+    max-width: 748px;
+  }
+}
+
+@media (min-width: $screen-laptop) {
+  .container {
+    max-width: 1014px;
+  }
+  .container {
+    max-width: 1004px;
+  }
+}
+
+@media (min-width: $screen-laptop-m) {
+  .container {
+    max-width: 1270px;
+  }
+}
