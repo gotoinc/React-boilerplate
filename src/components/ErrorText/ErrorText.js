@@ -10,7 +10,7 @@ const ErrorText = ({ children, looks }) => {
 
 ErrorText.propTypes = {
   looks: PropTypes.arrayOf(PropTypes.string),
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
 };
 
 ErrorText.defaultProps = {

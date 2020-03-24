@@ -33,6 +33,10 @@ class RedirectRouter {
     return `${this.getLocale()}/sign-in`;
   }
 
+  goToSignUpPage = () => {
+    this.history.push(`${this.getLocale()}sign-up`);
+  };
+
   goToDashboard = () => {
     this.history.push(`${this.getLocale()}dashboard`);
   };
