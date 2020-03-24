@@ -39,9 +39,14 @@ const Sidebar = ({ children }) => {
         <ul className={styles.sidebarList} role="menu">
           {sidebarRoutesList.map(({ handleClick, id, route, title }) => {
             return (
-              <div onClick={handleClick} onKeyPress={handleClick} role="button" tabIndex={0}>
+              <div
+                onClick={handleClick}
+                onKeyPress={handleClick}
+                role="button"
+                tabIndex={0}
+                key={id}
+              >
                 <li
-                  key={id}
                   className={`${styles.sidebarListItem} ${
                     activeRoute === route ? styles.active : ''
                   }`}
