@@ -6,7 +6,7 @@ import { HeaderPublic, FooterPublic } from '../../modules';
 const PublicLayout = ({ children, routes }) => {
   return (
     <div className={styles.container}>
-      <div className={styles.contentContainer}>
+      <div>
         <HeaderPublic />
         {React.cloneElement(children, routes.length && routes)}
       </div>

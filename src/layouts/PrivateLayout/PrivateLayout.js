@@ -7,7 +7,7 @@ const PrivateLayout = ({ children, routes }) => {
   return (
     <Sidebar>
       <div className={styles.container}>
-        <div className={styles.contentContainer}>
+        <div>
           <HeaderPrivate />
           {React.cloneElement(children, routes.length && routes)}
         </div>

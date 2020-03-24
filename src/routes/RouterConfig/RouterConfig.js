@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { RoutesList, Navigator, RedirectRouter } from '../index';
 import { useMatch } from '../../hooks';
 
-import { Page404, SignIn, Dashboard, Profile } from '../../pages';
+import { Page404, SignIn, SignUp, Dashboard, Profile } from '../../pages';
 import { Layout404, PublicLayout, PrivateLayout } from '../../layouts';
 
 const RouterConfig = () => {
@@ -15,6 +15,13 @@ const RouterConfig = () => {
         exact: true,
         component: PublicLayout,
         children: <SignIn />,
+        status: 'public',
+      },
+      {
+        path: `${match.path}${RoutesList.signUp}`,
+        exact: true,
+        component: PublicLayout,
+        children: <SignUp />,
         status: 'public',
       },
       {
