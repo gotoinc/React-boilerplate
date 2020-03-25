@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Switch } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { RouterConfig, RoutesWithSubRoutes } from './routes';
+import { changeLocale } from './store/actions/localeActions';
+import { RouterConfig, RoutesWithSubRoutes, RedirectRouter } from './routes';
 
 const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (RedirectRouter.getCurrentLocale()) {
+      dispatch(changeLocale.success(RedirectRouter.getCurrentLocale()));
+    }
+  }, [dispatch]);
+
   const { routes, noRouteFound } = RouterConfig();
   return (
     <div id="body">

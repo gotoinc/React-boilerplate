@@ -40,6 +40,7 @@ const Sidebar = ({ children }) => {
           {sidebarRoutesList.map(({ handleClick, id, route, title }) => {
             return (
               <div
+                className={styles.link}
                 onClick={handleClick}
                 onKeyPress={handleClick}
                 role="button"

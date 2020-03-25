@@ -1,9 +1,10 @@
 @import '../../assets/styles/theme-settings';
 
 .container {
-  background: $color-picton-blue-500;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  background: $color-picton-blue-500;
   align-items: center;
   padding: $rem1;
   margin-bottom: $rem2;
@@ -17,6 +18,19 @@
   }
 }
 
+.titleContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.localizationBar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
 @media (min-width: $screen-mobile-m) {
 
 }
@@ -28,6 +42,12 @@
 @media (min-width: $screen-tablet) {
   .container {
     flex-direction: row;
+  }
+  .titleContainer {
+    flex-direction: row;
+  }
+  .localizationBar {
+    width: auto;
   }
 }
 

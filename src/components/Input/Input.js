@@ -5,7 +5,11 @@ import styles from './Input.module.scss';
 
 const Input = ({ looks, ...rest }) => {
   const customStyles = getStyle({ looks, styles });
-  return <input className={customStyles} type="text" {...rest} />;
+  return (
+    <div className={customStyles}>
+      <input type="text" {...rest} />
+    </div>
+  );
 };
 
 Input.propTypes = {

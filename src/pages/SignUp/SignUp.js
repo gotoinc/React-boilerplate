@@ -30,16 +30,17 @@ const SignUp = () => {
               validationSchema={validationSchema}
               initialValues={{ email: '', password: '', passwordConfirmation: '' }}
               onSubmit={(values, actions) => {
+                actions.setSubmitting(false);
                 localStorage.setItem('authToken', 'token');
                 localStorage.setItem('role', 'member');
                 RedirectRouter.goToDashboard();
-                actions.setSubmitting(false);
               }}
             >
               {({ handleSubmit, handleChange, handleBlur, values, errors, isValid }) => (
                 <form onSubmit={handleSubmit}>
                   <div className={styles.inputContainer}>
                     <Input
+                      looks={['required', 'input']}
                       onChange={handleChange}
                       onBlur={handleBlur}
                       placeholder="Email"
@@ -55,6 +56,7 @@ const SignUp = () => {
                   </div>
                   <div className={styles.inputContainer}>
                     <Input
+                      looks={['required', 'input']}
                       onChange={handleChange}
                       onBlur={handleBlur}
                       placeholder="Password"
@@ -70,6 +72,7 @@ const SignUp = () => {
                   </div>
                   <div className={styles.inputContainer}>
                     <Input
+                      looks={['required', 'input']}
                       onChange={handleChange}
                       onBlur={handleBlur}
                       placeholder="Confirm your password"

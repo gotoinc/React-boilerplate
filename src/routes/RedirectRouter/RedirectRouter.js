@@ -7,6 +7,24 @@ class RedirectRouter {
     this.history = createBrowserHistory();
   }
 
+  getCurrentLocale = () => {
+    const pathnamesList = this.history.location.pathname.split('/');
+    const currentLocale = availableLocalizations.filter(locale => pathnamesList.includes(locale));
+    if (currentLocale.length) {
+      return currentLocale[0];
+    }
+    const localStorageLocale = localStorage.getItem('locale');
+    const isUserLocaleCorrect = availableLocalizations.includes(localStorageLocale);
+
+    if (isUserLocaleCorrect) {
+      return localStorageLocale;
+    }
+    if (browserLocale) {
+      return browserLocale;
+    }
+    return defaultLocale;
+  };
+
   getLocale = () => {
     const pathnamesList = this.history.location.pathname.split('/');
     const currentLocale = availableLocalizations.filter(locale => pathnamesList.includes(locale));
