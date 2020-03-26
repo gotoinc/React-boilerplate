@@ -43,6 +43,7 @@
 .redirectLink {
   color: $color-blue-ribbon300;
   transition: all .3s;
+  margin-top: $rem1;
   &:hover {
     cursor: pointer;
     font-weight: bold;

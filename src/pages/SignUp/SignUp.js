@@ -1,23 +1,32 @@
 import React from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import {useIntl} from "react-intl";
 import { localStorage } from '../../utils';
 import { RedirectRouter } from '../../routes';
 import { Card, Container, Input, ErrorText, Title, Button } from '../../components';
 import styles from './SignUp.module.scss';
 
-const validationSchema = Yup.object({
-  password: Yup.string()
-    .required('No password provided.')
-    .min(8, 'Password is too short - should be 8 chars minimum.')
-    .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
-  passwordConfirmation: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match'),
-  email: Yup.string()
-    .email('Invalid email')
-    .required('Email is Required'),
-});
-
 const SignUp = () => {
+  const intl = useIntl();
+
+  const emailPlaceholder = intl.formatMessage({ id: 'sign-up.email-placeholder' });
+  const passwordPlaceholder = intl.formatMessage({ id: 'sign-up.password-placeholder' });
+  const errorNoPassword = intl.formatMessage({ id: 'sign-up.error-no-password' });
+  const errorShortPassword = intl.formatMessage({ id: 'sign-up.error-short-password' });
+  const errorNoEmail = intl.formatMessage({ id: 'sign-up.error-required-email' });
+  const errorInvalidEmail = intl.formatMessage({ id: 'sign-up.error-invalid-email' });
+
+  const validationSchema = Yup.object({
+    password: Yup.string()
+      .required('No password provided.')
+      .min(8, 'Password is too short - should be 8 chars minimum.'),
+    passwordConfirmation: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match'),
+    email: Yup.string()
+      .email('Invalid email')
+      .required('Email is Required'),
+  });
+
   return (
     <div className={styles.container}>
       <Container looks={['container-s']}>

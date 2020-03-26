@@ -1,29 +1,44 @@
 import React from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { localStorage } from '../../utils';
 import { RedirectRouter } from '../../routes';
 import { Card, Container, Input, ErrorText, Title, Button } from '../../components';
 import styles from './SignIn.module.scss';
-
-const validationSchema = Yup.object({
-  password: Yup.string()
-    .required('No password provided.')
-    .min(8, 'Password is too short - should be 8 chars minimum.')
-    .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
-  email: Yup.string()
-    .email('Invalid email')
-    .required('Email is Required'),
-});
+import defaultLang from '../../translations/defaultLang';
 
 const SignIn = () => {
+  const intl = useIntl();
+
+  const emailPlaceholder = intl.formatMessage({ id: 'sign-in.email-placeholder' });
+  const passwordPlaceholder = intl.formatMessage({ id: 'sign-in.password-placeholder' });
+  const errorNoPassword = intl.formatMessage({ id: 'sign-in.error-no-password' });
+  const errorShortPassword = intl.formatMessage({ id: 'sign-in.error-short-password' });
+  const errorNoEmail = intl.formatMessage({ id: 'sign-in.error-required-email' });
+  const errorInvalidEmail = intl.formatMessage({ id: 'sign-in.error-invalid-email' });
+
+  const validationSchema = Yup.object({
+    password: Yup.string()
+      .required(errorNoPassword)
+      .min(8, errorShortPassword),
+    email: Yup.string()
+      .email(errorInvalidEmail)
+      .required(errorNoEmail),
+  });
+
   return (
     <div className={styles.container}>
       <Container looks={['container-s']}>
         <Card>
           <div className={styles.formContainer}>
             <Title looks={['blue']}>
-              <h1>Sign In</h1>
+              <h1>
+                <FormattedMessage
+                  id="sign-in.title"
+                  defaultMessage={defaultLang['sign-in.title']}
+                />
+              </h1>
             </Title>
             <Formik
               validationSchema={validationSchema}
@@ -42,7 +57,7 @@ const SignIn = () => {
                       looks={['input', 'required']}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      placeholder="Email"
+                      placeholder={emailPlaceholder}
                       value={values.email}
                       name="email"
                       type="email"
@@ -58,7 +73,7 @@ const SignIn = () => {
                       looks={['input', 'required']}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      placeholder="Password"
+                      placeholder={passwordPlaceholder}
                       value={values.password}
                       name="password"
                       type="password"
@@ -71,7 +86,10 @@ const SignIn = () => {
                   </div>
                   <div className={styles.buttonContainer}>
                     <Button type="submit" disabled={!isValid}>
-                      Submit
+                      <FormattedMessage
+                        id="sign-in.submit"
+                        defaultMessage={defaultLang['sign-in.submit']}
+                      />
                     </Button>
                   </div>
                 </form>
@@ -79,7 +97,10 @@ const SignIn = () => {
             </Formik>
             <div className={styles.redirectLinkContainer}>
               <Title looks={['blue']}>
-                <h3 className={styles.redirectTitle}>Haven&apos;t got an account yet?</h3>
+                <FormattedMessage
+                  id="sign-in.redirect-title"
+                  defaultMessage={defaultLang['sign-in.redirect-title']}
+                />
               </Title>
               <div
                 className={styles.redirectLink}
@@ -88,7 +109,10 @@ const SignIn = () => {
                 tabIndex={0}
                 role="link"
               >
-                Redirect to Registration page
+                <FormattedMessage
+                  id="sign-in.redirect-message"
+                  defaultMessage={defaultLang['sign-in.redirect-message']}
+                />
               </div>
             </div>
           </div>

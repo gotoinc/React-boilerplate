@@ -1,0 +1,12 @@
+{
+  "sign-in.title": "Войти",
+  "sign-in.email-placeholder": "Введите ваш адрес электронной почты",
+  "sign-in.password-placeholder": "Введите ваш пароль",
+  "sign-in.error-no-password": "Пароль не введен.",
+  "sign-in.error-short-password": "Пароль слишком короткий - должен быть минимум 8 символов",
+  "sign-in.error-invalid-email": "Невалидный адрес электронной почты",
+  "sign-in.error-required-email": "Адрес электронной почты обязателен",
+  "sign-in.submit": "Отправить",
+  "sign-in.redirect-title": "До сих пор нет аккаунта?",
+  "sign-in.redirect-message": "Перейти на панель регистрации."
+}

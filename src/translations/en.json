@@ -1,0 +1,12 @@
+{
+  "sign-in.title": "Sign in",
+  "sign-in.email-placeholder": "Enter your email",
+  "sign-in.password-placeholder": "Enter your password",
+  "sign-in.error-no-password": "No password provided.",
+  "sign-in.error-short-password": "Password is too short - should be 8 chars minimum.",
+  "sign-in.error-invalid-email": "Invalid email",
+  "sign-in.error-required-email": "Email is Required",
+  "sign-in.submit": "Send",
+  "sign-in.redirect-title": "Haven't got an account yet?",
+  "sign-in.redirect-message": "Redirect to Registration page."
+}
